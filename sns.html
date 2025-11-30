@@ -7,29 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            margin: 0;          /* ブラウザデフォルトの余白リセット */
-            padding: 0 500px;    /* 左右に50pxずつ余白を追加 */
+            margin: 0;
+            padding: 0 500px;
             font-family: Arial, sans-serif;
         }
+
+        /* ▼ スマホで padding を消す */
+        @media (max-width: 800px) {
+            body {
+                padding: 0 20px; /* 無難な左右 20px の余白だけにする */
+            }
+
+            .menu li a {
+                width: 100%;     /* 画面幅に合わせる */
+                font-size: 20px;
+                line-height: 50px;
+            }
+
+            .menu {
+                flex-direction: column; /* メニューを縦並びへ */
+                gap: 10px;
+            }
+        }
+
         .menu {
-            list-style: none;   /* 点を消す */
+            list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;      /* 横並びにする */
-            gap: 0px;          /* 項目の間の余白（自由に調整） */
+            display: flex;
+            gap: 0px;
         }
+
         .menu li a {
             display: block;
-            width: 200px;         /* 横幅固定 */
-            line-height: 60px;    /* 文字を縦中央に配置 */
+            width: 200px;
+            line-height: 60px;
             text-align: center;
             text-decoration: none;
             color: rgb(0, 122, 10);
             border: 3px solid #9100e5;
             font-size: 25px;
-            white-space: nowrap;  /* 折り返さない */
+            white-space: nowrap;
             box-sizing: border-box;
         }
+
         .text {
             font-size: 20px;
         }
