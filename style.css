@@ -32,10 +32,32 @@
     width: 618px;
     height: 347px;
 }
+.img {
+    width: 309px;
+    height: 173px;
+}
 .news {
     border: solid;
 
 }
+.member {
+    display: flex;       /* 横並びにする */
+    align-items: flex-start; /* 画像の上に文字の上端を揃える */
+    gap: 20px;           /* 画像と文字の間の余白 */
+    margin-bottom: 20px; /* メンバー間の余白 */
+}
+
+.member img {
+    order: 0;
+    width: 240px;       /* 画像サイズ */
+    height: auto;       /* 高さは自動で比率を維持 */
+}
+
+.member-text {
+    order: 1;
+    flex: 1;            /* 残りの幅を使う */
+}
+
 @media (max-width: 800px) {
     .menu li a {
         display: block;
@@ -53,4 +75,21 @@
         width: 309px;
         height: 173px;
     }
+        .img {
+        width: 154px;
+        height: 86px;
+    }
+    .member img {
+        order: 0;
+        width: 120px;       /* 画像サイズ */
+        height: auto;       /* 高さは自動で比率を維持 */
+    }
+    .member-text {
+        order: 1;
+        flex: 1;            /* 残りの幅を使う */
+        font-size: 17px;
+    }
+
+
+
 }
